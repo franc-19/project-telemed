@@ -5,7 +5,221 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>TeleHealth Portal</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+    <style>
+        /* Import Google Fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f0f4f8;
+            color: #333;
+            line-height: 1.6;
+            padding: 0 10px;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #1e3a8a;  /* Cool dark blue */
+            color: #edf2f7;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            width: 50px;
+            height: 50px;
+            margin-right: 15px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: #d4dff2;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #63b3ed;
+        }
+
+        .hamburger {
+            display: none;
+            font-size: 30px;
+            cursor: pointer;
+        }
+
+        main {
+            display: flex;
+            margin-top: 20px;
+        }
+
+        .content {
+            flex: 2;
+            padding-right: 20px;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .content h2 {
+            font-size: 2rem;
+            color: #1e3a8a;
+            margin-bottom: 15px;
+        }
+
+        .sidebar {
+            flex: 1;
+            background-color: #cfe0f2;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .sidebar h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: #1e3a8a;
+        }
+
+        .sidebar ul {
+            list-style: none;
+        }
+
+        .sidebar ul li {
+            margin-bottom: 10px;
+        }
+
+        .sidebar ul li a {
+            color: #1e3a8a;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .sidebar ul li a:hover {
+            color: #63b3ed;
+        }
+
+        .sidebar .search-bar input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #1e3a8a;
+            border-radius: 5px;
+        }
+
+        .sidebar .search-bar button {
+            width: 100%;
+            padding: 10px;
+            background-color: #1e3a8a;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .sidebar .search-bar button:hover {
+            background-color: #63b3ed;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #1e3a8a;
+            color: white;
+        }
+
+        footer a {
+            color: #63b3ed;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #ffffff;
+        }
+
+        /* Services Section */
+        #services {
+            padding: 50px;
+            background-color: #f9f9f9;
+            text-align: center; /* Center align the text */
+        }
+
+        #services ul {
+            list-style: none; /* Remove bullet points */
+            padding: 0;
+        }
+
+        #services ul li {
+            font-size: 1.2em; /* Increase font size */
+            margin-bottom: 15px; /* Add spacing between list items */
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            main {
+                flex-direction: column;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            nav ul {
+                display: none;
+                flex-direction: column;
+            }
+
+            nav ul.show {
+                display: flex;
+            }
+
+            .sidebar {
+                margin-top: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                flex-direction: column;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+
+            .content {
+                padding-right: 0;
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -19,7 +233,7 @@
             <ul id="nav-links">
                 <li><a href="#">Home</a></li>
                 <li><a href="#about">About Us</a></li>
-                <li><a href="#">Services</a></li>
+                <li><a href="#services">Services</a></li>
                 <li><a href="#">Doctors</a></li>
                 <li><a href="#">Contact</a></li>
                 <li><a href="#">Appointments</a></li>
@@ -34,6 +248,17 @@
         <section class="content">
             <h2>Welcome to TeleHealth</h2>
             <p>Telemedicine brings healthcare services to you, wherever you are. Schedule appointments, consult with doctors, and access your health records online.</p>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services">
+            <h2>Our Services</h2>
+            <ul>
+                <li>Virtual Consultations</li>
+                <li>Remote Health Monitoring</li>
+                <li>Prescription Refills</li>
+                <li>Medical History Review</li>
+            </ul>
         </section>
 
         <!-- Sidebar Section -->
@@ -67,7 +292,16 @@
             navLinks.classList.toggle('show');
         }
     </script>
+<!-- Start of LiveChat (www.livechat.com) code -->
+<script>
+    window.__lc = window.__lc || {};
+    window.__lc.license = 18563730;
+    window.__lc.integration_name = "manual_onboarding";
+    window.__lc.product_name = "livechat";
+    ;(function(n,t,c){function i(n){return e._h?e._h.apply(null,n):e._q.push(n)}var e={_q:[],_h:null,_v:"2.0",on:function(){i(["on",c.call(arguments)])},once:function(){i(["once",c.call(arguments)])},off:function(){i(["off",c.call(arguments)])},get:function(){if(!e._h)throw new Error("[LiveChatWidget] You can't use getters before load.");return i(["get",c.call(arguments)])},call:function(){i(["call",c.call(arguments)])},init:function(){var n=t.createElement("script");n.async=!0,n.type="text/javascript",n.src="https://cdn.livechatinc.com/tracking.js",t.head.appendChild(n)}};!n.__lc.asyncInit&&e.init(),n.LiveChatWidget=n.LiveChatWidget||e}(window,document,[].slice))
+</script>
+<noscript><a href="https://www.livechat.com/chat-with/18563730/" rel="nofollow">Chat with us</a>, powered by <a href="https://www.livechat.com/?welcome" rel="noopener nofollow" target="_blank">LiveChat</a></noscript>
+<!-- End of LiveChat code -->
 
 </body>
 </html>
-
